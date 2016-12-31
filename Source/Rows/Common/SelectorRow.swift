@@ -12,8 +12,13 @@ public class PushSelectorCell<T: Equatable> : Cell<T>, CellType {
     
     required public init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        detailTextLabel?.text = ""
+        detailTextLabel?.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint(item: detailTextLabel!, attribute: .Left, relatedBy: .GreaterThanOrEqual, toItem: textLabel, attribute: .Right, multiplier: 1, constant: 0).active = true
+        NSLayoutConstraint(item: detailTextLabel!, attribute: .Right, relatedBy: .Equal, toItem: contentView, attribute: .Right, multiplier: 1, constant: 0).active = true
+        NSLayoutConstraint(item: detailTextLabel!, attribute: .CenterY, relatedBy: .Equal, toItem: textLabel, attribute: .CenterY, multiplier: 1, constant: 0).active = true
     }
-    
+
     public override func update() {
         super.update()
         accessoryType = .DisclosureIndicator

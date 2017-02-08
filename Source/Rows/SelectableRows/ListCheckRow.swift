@@ -20,7 +20,7 @@ public class ListCheckCell<T: Equatable> : Cell<T>, CellType {
         editingAccessoryType = accessoryType
         selectionStyle = .Default
         if row.isDisabled {
-            tintColor = UIColor(red: red, green: green, blue: blue, alpha: 0.3)
+			tintColor = UIColor(red: 0.96, green: 0.52, blue: 0.12, alpha: 0.3)
             selectionStyle = .None
         }
         else {
